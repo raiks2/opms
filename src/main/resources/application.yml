@@ -1,0 +1,18 @@
+migration:
+  numThreads: 15
+  delayMs: 600000
+  queryTimeoutMs: 300000
+  oracle:
+    datasource:
+      jdbcUrl: "jdbc:oracle://localhost/sourcedb"
+      username: "root"
+      password: "root"
+      driverClassName: "oracle.jdbc.driver.OracleDriver"
+  postgres:
+    datasource:
+      jdbcUrl: "jdbc:postgresql://localhost/destdb"
+      username: "root"
+      password: "root"
+      driverClassName: "org.postgresql.Driver"
+  query:
+    remoteProcedureCallSql: "{call migrate}"
